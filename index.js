@@ -1,9 +1,20 @@
+import fs from 'fs';
 import chalk from 'chalk';
-
 // const chalk= require('chalk'); // old-version -- other way
 
-console.log(chalk.blue('Hello world!'));
+function handlingError(fault) {
+    console.log(fault);
+    throw new Error(chalk.red(fault.code, 'Não há arquivo no diretório'));
+}
 
-console.log('olá mundo');
-console.log('São geralmente recuperados a partir de um objeto [FileList](https://developer.mozilla.org/pt-BR/docs/Web/API/FileList) que é retornado como resultado da seleção, pelo usuário, de arquivos através do elemento [<input>](https://developer.mozilla.org/pt-BR/docs/Web/HTML/Element/Input)');
-console.log(', a partir do objeto [DataTransfer](https://developer.mozilla.org/pt-BR/docs/Web/API/DataTransfer) utilizado em operações de arrastar e soltar, ou a partir da API `mozGetAsFile()` em um [HTMLCanvasElement](https://developer.mozilla.org/pt-BR/docs/Web/API/HTMLCanvasElement).');
+function bringfile(pathFile){
+    const encoding = 'utf-8';
+    fs.readFile(pathFile , encoding, (fault,text) => {
+        if (fault) {
+            handlingError(fault);
+        }
+        console.log(chalk.green(text));
+    })
+}
+
+bringfile('./arquivos/');
