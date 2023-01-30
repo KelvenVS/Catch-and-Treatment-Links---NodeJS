@@ -7,7 +7,7 @@ function handlingError(fault) {
     throw new Error(chalk.red(fault.code, 'Não há arquivo no diretório'));
 }
 
-//.then()
+//promises .then()
 function bringfile(pathFile){
     const encoding = 'utf-8';
     fs.promises.readFile(pathFile , encoding)
