@@ -11,4 +11,6 @@ or
 
  npm run cli ./arquivos/
 
+ npm run cli:check
+
  #
