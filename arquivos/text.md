@@ -4,5 +4,3 @@ São geralmente recuperados a partir de um objeto [FileList](https://developer.m
 
 [Teste de retorno 400](https://httpstat.us/404).
 [gatinho salsicha](http://gatinhosalsicha.com.br/)
-
-npm install chalk@5.0.1 --save--exact

@@ -19,15 +19,7 @@ async function bringfile(pathFile){
     handlingError(fault);
   }
 }
-
-// //promises .then()
-// function bringfile(pathFile){
-//     const encoding = 'utf-8';
-//     fs.promises.readFile(pathFile , encoding)
-//       .then((text) => console.log(chalk.green(text)))
-//         .catch((fault) => handlingError(fault));
-//         // .catch(handlingError);
-// }
+// \[[^\[\]]*?\]
 
 bringfile('./arquivos/text.md');
 bringfile('./arquivos/');

@@ -10,3 +10,11 @@ git rm -r --cached .
 git add .
 
 git commit -m ".gitignore funcionando ;)"
+
+--lib
+npm install chalk@5.0.1 --save--exact
+
+expressões regulares
+[regex](https://regex101.com/)
+\[[^\[\]]*?\]
+
