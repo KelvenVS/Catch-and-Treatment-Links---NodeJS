@@ -9,7 +9,7 @@ function extractLinks(text){
   const capture = [...text.matchAll(regex)];
   const result = capture.map(capture => ({[capture[1]]: capture[2]}))
   // console.log(result);
-  return result;
+  return result.length !== 0 ? result : 'Não tem links nesse arquivo';
 }
 
 function handlingError(fault) {
@@ -24,11 +24,12 @@ async function bringfile(pathFile){
   try{
     const encoding = 'utf-8';
     const text = await fs.promises.readFile(pathFile , encoding);
-    console.log(extractLinks(text));
+    return(extractLinks(text));
   } catch (fault) {
     handlingError(fault);
   }
 }
+
 // \[[^\[\]]*?\]
 
 // /\(https?:\/\/[^\s?#.].[^\s]*\)
