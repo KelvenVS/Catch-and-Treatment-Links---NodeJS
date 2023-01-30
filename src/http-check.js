@@ -19,7 +19,11 @@ async function checkStatus (listURLs) {
 }
 
 function treatmentError (fault){
-  console.log(chalk.red('Algo deu errado',fault));
+  if (fault.cause.code === 'ENOTFOUND'){
+    return 'link não encontrado';
+  } else {
+    return 'ocorreu algum erro';
+  }
 }
 
 export default async function listValidated (listLinks) {
