@@ -6,8 +6,8 @@
   "type" : "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "cli": "node ./src/cli.js ./arquivos/text.md",
-    "cli:check": "node ./src/cli.js ./arquivos/text.md --check"
+    "cli": "node ./src/cli.js ./arquivos/",
+    "cli:check": "node ./src/cli.js ./arquivos/ --check"
   },
   "repository": {
     "type": "git",
