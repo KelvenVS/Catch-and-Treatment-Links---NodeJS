@@ -3,21 +3,20 @@ function extractLinksArray (arrLinks){
 }
 
 async function checkStatus (listURLs) {
-  return listURLs.map(async (url) => {
-    const response = await fetch(url);
-    return response.status;
-  })
+  const arrStatus = await Promise.all(
+    listURLs.map(async (url) => {
+      const response = await fetch(url);
+      return response.status;
+    })
+  )
+  return arrStatus;
 }
 
-// const res = await fetch('https://nodejs.org/api/documentation.json');
-// if (res.ok) {
-//   const data = await res.json();
-//   console.log(data);
-// }
-
-export default function listValidated (listLinks) {
+export default async function listValidated (listLinks) {
   const links = extractLinksArray(listLinks);
-  const status = checkStatus(links);
-  console.log(status);
+  const status = await checkStatus(links);
+  // console.log(status);
   return status;
 }
+
+// [gatinho salsicha](http://gatinhosalsicha.com.br/)
