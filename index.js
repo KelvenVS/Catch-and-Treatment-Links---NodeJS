@@ -7,23 +7,22 @@ function handlingError(fault) {
     throw new Error(chalk.red(fault.code, 'Não há arquivo no diretório'));
 }
 
-//promises .then()
-function bringfile(pathFile){
-    const encoding = 'utf-8';
-    fs.promises.readFile(pathFile , encoding)
-      .then((text) => console.log(chalk.green(text)))
-        .catch((fault) => handlingError(fault));
-        // .catch(handlingError);
+// aSync/aWait
+
+async function bringfile(pathFile){
+  const encoding = 'utf-8';
+  const text = await fs.promises.readFile(pathFile , encoding);{
+    console.log(chalk.red(text)); // "Promise { <pending> }" if async alone
+  }
 }
 
+// //promises .then()
 // function bringfile(pathFile){
 //     const encoding = 'utf-8';
-//     fs.readFile(pathFile , encoding, (fault,text) => {
-//         if (fault) {
-//             handlingError(fault);
-//         }
-//         console.log(chalk.green(text));
-//     })
+//     fs.promises.readFile(pathFile , encoding)
+//       .then((text) => console.log(chalk.green(text)))
+//         .catch((fault) => handlingError(fault));
+//         // .catch(handlingError);
 // }
 
-bringfile('./arquivos/');
+bringfile('./arquivos/text.md');
