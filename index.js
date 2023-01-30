@@ -10,9 +10,13 @@ function handlingError(fault) {
 // aSync/aWait
 
 async function bringfile(pathFile){
-  const encoding = 'utf-8';
-  const text = await fs.promises.readFile(pathFile , encoding);{
+
+  try{
+    const encoding = 'utf-8';
+    const text = await fs.promises.readFile(pathFile , encoding);
     console.log(chalk.red(text)); // "Promise { <pending> }" if async alone
+  } catch (fault) {
+    handlingError(fault);
   }
 }
 
@@ -26,3 +30,4 @@ async function bringfile(pathFile){
 // }
 
 bringfile('./arquivos/text.md');
+bringfile('./arquivos/');
