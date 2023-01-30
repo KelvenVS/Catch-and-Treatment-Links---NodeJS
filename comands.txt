@@ -1,0 +1,12 @@
+npm install chalk@5.0.1 --save--exact 
+npm install chalk
+
+$ node -v
+
+--refresh paste on git--
+
+git rm -r --cached .
+
+git add .
+
+git commit -m ".gitignore funcionando ;)"
