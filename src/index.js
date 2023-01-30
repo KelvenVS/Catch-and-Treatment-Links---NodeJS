@@ -2,7 +2,7 @@ import fs from 'fs';
 import chalk from 'chalk';
 // const chalk= require('chalk'); // old-version -- other way
 
-function extractLinks(text){
+function extractLinksText(text){
   const regex = /\[([^\[\]]*?)\]\((https?:\/\/[^\s?#.].[^\s]*)\)/gm;
   // const capture = text.match(regex);
   // const capture = regex.exec(text);
@@ -24,7 +24,7 @@ async function bringfile(pathFile){
   try{
     const encoding = 'utf-8';
     const text = await fs.promises.readFile(pathFile , encoding);
-    return(extractLinks(text));
+    return(extractLinksText(text));
   } catch (fault) {
     handlingError(fault);
   }
