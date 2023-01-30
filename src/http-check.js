@@ -1,3 +1,7 @@
-export default function listValidated (listLiks) {
-  return 'entrou na função';
+function extractLinksArray (arrLinks){
+  return arrLinks.map((objectLink) => Object.values(objectLink))
+}
+
+export default function listValidated (listLinks) {
+  return extractLinksArray(listLinks);
 }
