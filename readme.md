@@ -6,11 +6,15 @@
 
 <h2>Descrição do Projeto</h2>
 
-É necessario ter nodeJS 18.xx  e chalk 5.x.x
+É necessário ter NodeJS 18.xx  e chalk 5.x.x
 
 #
 
-Desenvolvida no curso da alura essa Biblioteca captura links de arquivos.md e as trasforma em um array , verificando se os links estãoa ativos e dandos seus respequitivos códigos como por exemplo  : 200 - ok ou 404 - Not Found 
+Para usar é só colcolar arquivo de texto "***arquivo.md***" na pasta ./arquivos/ e rodar os "***comandos***" desejado
+
+#
+
+Desenvolvida no curso da alura essa biblioteca captura links de arquivos.md e as trasforma em um array , verificando se os links estão ativos e processando seus respectivos códigos, como por exemplo  : 200 - ok ou 404 - Not Found 
 
 #
 
@@ -31,7 +35,7 @@ Desenvolvida no curso da alura essa Biblioteca captura links de arquivos.md e as
 
 #
 
-<p>Neste projeto esta presente</p>
+<p>Neste projeto está presente</p>
 
 * Importação e exportação de módulos 
 * Requisições https na API fetch() do NodeJS 
