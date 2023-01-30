@@ -1,8 +1,12 @@
+import chalk from 'chalk';
 import bringfile from './index.js';
 
 const path = process.argv;
-console.log(path[2])
+
+async function processText(path) {
+  const result = await bringfile(path[2]);
+  console.log(chalk.yellow('Lista de Links'),result);
+}
 
 // node src/cli.js  ./arquivos/text.md 
-
-bringfile(path[2]);
+processText(path);
